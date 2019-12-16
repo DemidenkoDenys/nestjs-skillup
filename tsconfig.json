@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
@@ -8,13 +9,7 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "paths": {
-      "@interfaces": ["src/interfaces"],
-      "@providers": ["src/providers"],
-      "@utils": ["src/utils"]
-    }
+    "incremental": true
   },
   "exclude": ["node_modules", "dist"]
 }
