@@ -14,7 +14,7 @@ export const databaseProviders = [
         database: 'api',
       });
       sequelize.addModels([Users]);
-      await sequelize.sync();
+      await sequelize.sync({ force: true });
       return sequelize;
     },
   },

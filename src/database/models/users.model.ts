@@ -12,7 +12,7 @@ import {
 export class Users extends Model<Users> {
 
   @PrimaryKey
-  @Column({ type: DataType.NUMBER })
+  @Column({ type: DataType.INTEGER })
   id: number;
 
   @Unique
@@ -27,4 +27,7 @@ export class Users extends Model<Users> {
 
   @Column({ type: DataType.DATE })
   birthdate: Date;
+
+  @Column({ type: DataType.STRING })
+  description: string;
 }
