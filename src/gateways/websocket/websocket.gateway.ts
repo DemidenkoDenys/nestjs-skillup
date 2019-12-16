@@ -15,10 +15,10 @@ import {
   MSG_TO_CLIENT_EVENT_NAME,
   MSG_TO_SERVER_EVENT_NAME,
   CONNECTION_MSG_TO_SERVER,
-} from './constants';
+} from '../../constants';
 
 @WebSocketGateway()
-export class AppGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
+export class WebsocketGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
 
   @WebSocketServer() server: Server;
   private logger: Logger = new Logger('AppGateway');
