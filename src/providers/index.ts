@@ -1,1 +1,1 @@
-
+export { databaseProviders } from './database/postgres.provider';
