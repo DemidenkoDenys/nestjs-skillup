@@ -1,21 +1,22 @@
 import { Module } from '@nestjs/common';
-import { WebsocketGateway } from './gateways';
-import { DatabaseModule } from './modules/database.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Users } from './database';
-import { UserController } from './controllers/user.controller';
-import { UserService } from './controllers/user.service';
+import { UsersModule } from './models';
+import { WebsocketGateway } from './gateways';
+import { DatabaseModule } from './database/database.module';
+import { AppController } from './controllers/app.controller';
 
 @Module({
-  imports: [DatabaseModule],
-  controllers: [UserController],
+  controllers: [
+    AppController,
+  ],
+  imports: [
+    TypeOrmModule.forRoot(),
+    // DatabaseModule,
+    UsersModule,
+  ],
   providers: [
-    UserService,
     WebsocketGateway,
-    {
-      provide: 'user-providers',
-      useValue: Users,
-    },
   ],
 })
 export class AppModule {}
