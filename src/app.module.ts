@@ -1,19 +1,17 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { UsersModule } from './models';
-import { WebsocketGateway } from './gateways';
 import { DatabaseModule } from './database/database.module';
-import { AppController } from './controllers/app.controller';
+import { modules, controllers } from './modules';
+
+import { WebsocketGateway } from './gateways';
 
 @Module({
   controllers: [
-    AppController,
+    ...controllers,
   ],
   imports: [
-    TypeOrmModule.forRoot(),
-    // DatabaseModule,
-    UsersModule,
+    DatabaseModule,
+    ...modules,
   ],
   providers: [
     WebsocketGateway,

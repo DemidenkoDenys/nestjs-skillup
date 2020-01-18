@@ -1,0 +1,6 @@
+export POSTGRES_TYPE=postgres
+export POSTGRES_HOST=127.0.0.1
+export POSTGRES_PORT=5432
+export POSTGRES_USERNAME=postgres
+export POSTGRES_PASSWORD=1
+export POSTGRES_DATABASE=api
