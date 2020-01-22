@@ -18,6 +18,9 @@ export class User extends BaseEntity {
     @Column()
     login: string;
 
+    // @Column({ nullable: true })
+    // logoUrl?: string;
+
     @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date;
 

@@ -1,11 +1,12 @@
 {
   "name": "server",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
   "license": "MIT",
+  "author": "Demidenko Denys",
+  "description": "",
   "scripts": {
     "prebuild": "rimraf dist",
+    "clean": "rimraf dist && rimraf db",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -19,9 +20,9 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "migration:generate": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:generate",
-    "migration:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run"
-
+    "migration:generate": "env-cmd npm run build && ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:generate",
+    "migration:run": "env-cmd npm run typeorm migration:run",
+    "seed": "env-cmd ts-node ./node_modules/typeorm-seeding/dist/cli.js seed"
   },
   "dependencies": {
     "@nestjs/common": "^6.7.2",
@@ -31,13 +32,18 @@
     "@nestjs/swagger": "^4.0.9",
     "@nestjs/typeorm": "^6.2.0",
     "@nestjs/websockets": "^6.10.11",
+    "cross-env": "^6.0.3",
+    "dotenv": "^8.2.0",
+    "env-cmd": "^10.0.1",
+    "faker": "^4.1.0",
     "mysql2": "^2.0.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.3",
     "sequelize": "^5.21.3",
     "sequelize-typescript": "^1.1.0",
-    "typeorm": "^0.2.21"
+    "typeorm": "^0.2.21",
+    "typeorm-seeding": "^1.2.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^6.9.0",

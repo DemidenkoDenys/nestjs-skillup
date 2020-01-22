@@ -1,7 +1,7 @@
 ## Installation
 
 ```bash
-& npm install -g ts-node typescript typeorm
+& npm install -g ts-node typescript typeorm env-cmd
 $ npm install 
 ```
 
@@ -34,8 +34,8 @@ $ npm run test:cov
 ## Environment Variables
 
 ```bash
-# setup enviromnent variables
-$ . env.sh
+# enviromnent variables are in .env file
+# enviromnent variables sets automatically
 ```
 
 ## DB preparation
@@ -58,4 +58,9 @@ $ npm run migration:generate -- -n <name-of-migration-file>
 # run migration
 $ npm run migration:run
 ```
- 
+
+## Seed DB
+
+```bash
+$ npm run seed
+```
