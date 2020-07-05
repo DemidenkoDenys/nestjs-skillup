@@ -33,8 +33,13 @@ Create migrations with command:
 
 ```bash
 # After each change or initially, create migration to reflect models changes or initial structure to migration files
+
+# compile typescript models to js format
 $ npm start
+
+# create migration file to apply changes to database
 $ npm run migration:generate -- -n <name-of-migration-file>
+
 # run migration
 $ npm run migration:run
 ```
