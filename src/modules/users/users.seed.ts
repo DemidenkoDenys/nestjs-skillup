@@ -8,7 +8,7 @@ const getUser = () => ({
   surname: faker.name.lastName(1),
   firstname: faker.name.firstName(1),
   birthdate: faker.date.past(),
-  // logoUrl: `${faker.image.imageUrl()}`,
+  logoUrl: `${faker.image.imageUrl()}`,
   createdAt: new Date(),
   updatedAt: new Date(),
 });
