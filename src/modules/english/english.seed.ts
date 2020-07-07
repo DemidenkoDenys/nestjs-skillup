@@ -1,6 +1,6 @@
 import { Factory, Seeder } from 'typeorm-seeding';
 import { Connection } from 'typeorm';
-import { English } from './english.model';
+import { EnglishEntity } from './english.model';
 import * as faker from 'faker';
 
 const getWord = () => {
@@ -19,7 +19,7 @@ export default class CreateEnglishWords implements Seeder {
     await connection
       .createQueryBuilder()
       .insert()
-      .into(English)
+      .into(EnglishEntity)
       .values(words)
       .execute();
   }

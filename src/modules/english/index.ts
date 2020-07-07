@@ -1,4 +1,4 @@
-export { English } from './english.model';
+export { EnglishEntity } from './english.model';
 export { EnglishModule } from './english.module';
 export { EnglishService } from './english.service';
 export { EnglishController } from './english.controller';

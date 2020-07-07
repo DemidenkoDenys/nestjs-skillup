@@ -1,6 +1,6 @@
 import { Factory, Seeder } from 'typeorm-seeding';
 import { Connection } from 'typeorm';
-import { User } from './users.model';
+import { UserEntity } from './users.model';
 import * as faker from 'faker';
 
 const getUser = () => ({
@@ -21,7 +21,7 @@ export default class CreateUsers implements Seeder {
     await connection
       .createQueryBuilder()
       .insert()
-      .into(User)
+      .into(UserEntity)
       .values(users)
       .execute();
   }

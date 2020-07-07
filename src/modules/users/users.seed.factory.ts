@@ -1,10 +1,10 @@
 import { define } from 'typeorm-seeding';
 import * as Faker from 'faker';
-import { User } from './users.model';
+import { UserEntity } from './users.model';
 
-define(User, (faker: typeof Faker, settings: { roles: string[] }) => {
+define(UserEntity, (faker: typeof Faker, settings: { roles: string[] }) => {
   const gender = faker.random.number(1);
-  const user = new User();
+  const user = new UserEntity();
 
   user.login = faker.internet.userName();
   user.surname = faker.name.lastName(gender);

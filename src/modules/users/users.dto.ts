@@ -1,6 +1,6 @@
 import { BaseEntity } from 'typeorm';
 
-export interface UserInterface extends BaseEntity {
+export interface CreateUserDTO extends BaseEntity {
   login: string;
   firstname: string;
   surname: string;
