@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
 
 import { DatabaseModule } from './database/database.module';
 import { modules, controllers } from './modules';
@@ -12,7 +11,6 @@ import { WebsocketGateway } from './gateways';
   ],
   imports: [
     DatabaseModule,
-    ConfigModule.forRoot(),
     ...modules,
   ],
   providers: [

@@ -1,21 +1,13 @@
-import { UserEntity, UsersModule, UsersController } from './users';
-import { EnglishEntity, EnglishModule, EnglishController } from './english';
-import { RussianEntity, RussianModule, RussianController } from './russian';
+import { User, UsersModule, UsersController } from './users';
 
 export const entities = [
-  UserEntity,
-  EnglishEntity,
-  RussianEntity,
+  User,
 ];
 
 export const modules = [
   UsersModule,
-  EnglishModule,
-  RussianModule,
 ];
 
 export const controllers = [
   UsersController,
-  EnglishController,
-  RussianController,
 ];
