@@ -5,3 +5,4 @@ export { RussianController } from './russian.controller';
 
 export * from './russian.dto';
 export * from './russian.constants';
+export * from './russian.interfaces';

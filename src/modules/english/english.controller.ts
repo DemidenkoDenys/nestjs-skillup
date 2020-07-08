@@ -3,8 +3,9 @@ import { Controller, Get, Post, Body, Query } from '@nestjs/common';
 import {
   EnglishEntity,
   EnglishService,
-  CreateEnglishDTO,
   SEARCH,
+  FinsWordParams,
+  CreateEnglishDTO,
 } from './';
 
 @Controller('english')
@@ -12,8 +13,8 @@ export class EnglishController {
   constructor(private readonly englishService: EnglishService) {}
 
   @Get()
-  public async getWord(@Query(SEARCH) searchString: string): Promise<EnglishEntity[]> {
-    return this.englishService.findWord(searchString);
+  public async getWord(@Query(SEARCH) params: FinsWordParams): Promise<EnglishEntity[]> {
+    return this.englishService.findWord(params);
   }
 
   @Get()

@@ -5,3 +5,4 @@ export { EnglishController } from './english.controller';
 
 export * from './english.dto';
 export * from './english.constants';
+export * from './english.interfaces';

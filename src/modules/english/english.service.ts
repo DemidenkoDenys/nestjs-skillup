@@ -2,7 +2,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 
-import { EnglishEntity, CreateEnglishDTO } from './';
+import { EnglishEntity, CreateEnglishDTO, FinsWordParams } from './';
 
 @Injectable()
 export class EnglishService {
@@ -12,8 +12,8 @@ export class EnglishService {
     private readonly englishRepository: Repository<EnglishEntity>,
   ) {}
 
-  async findWord(searchString: string): Promise<EnglishEntity[]> {
-    const pattern = `${searchString}%`;
+  async findWord(params: FinsWordParams): Promise<EnglishEntity[]> {
+    const pattern = `${params.search}%`;
     const where = `word ILIKE '${pattern}'`;
     return await this.englishRepository.find({ where });
   }

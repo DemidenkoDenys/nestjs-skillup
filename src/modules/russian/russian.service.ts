@@ -2,7 +2,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 
-import { RussianEntity, CreateWordDTO } from './';
+import { RussianEntity, CreateWordDTO, FindWordParams } from './';
 
 @Injectable()
 export class RussianService {
@@ -12,8 +12,8 @@ export class RussianService {
     private readonly repository: Repository<RussianEntity>,
   ) {}
 
-  async findWord(searchString: string): Promise<RussianEntity[]> {
-    const pattern = `${searchString}%`;
+  async findWord(params: FindWordParams): Promise<RussianEntity[]> {
+    const pattern = `${params.search}%`;
     const where = `word ILIKE '${pattern}'`;
     return await this.repository.find({ where });
   }
