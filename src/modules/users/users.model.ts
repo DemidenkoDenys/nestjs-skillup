@@ -1,7 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, CreateDateColumn, UpdateDateColumn, Timestamp } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity('users')
-export class User extends BaseEntity {
+export class UserEntity extends BaseEntity {
 
     @PrimaryGeneratedColumn()
     id: number;
@@ -17,6 +17,9 @@ export class User extends BaseEntity {
 
     @Column()
     login: string;
+
+    @Column({ nullable: true })
+    logoUrl?: string;
 
     @CreateDateColumn({ type: 'timestamp' })
     createdAt: Date;

@@ -1,7 +1,7 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class initUsersMigration1579378714010 implements MigrationInterface {
-    name = 'initUsersMigration1579378714010'
+export class init1579729277987 implements MigrationInterface {
+    name = 'init1579729277987'
 
     public async up(queryRunner: QueryRunner): Promise<any> {
         await queryRunner.query(`ALTER TABLE "users" ADD "id" SERIAL NOT NULL`, undefined);
