@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { EngRusEntity } from '.';
+import { EngRusEntity } from './eng-rus.model';
 import { EngRusService } from './eng-rus.service';
 
 @Module({
