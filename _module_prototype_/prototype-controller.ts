@@ -15,7 +15,7 @@ export class ...Controller {
   }
 
   @Post()
-  public async postMethod(@Body() body: AnyDTO): Promise<any> {
+  public async postMethod(@Body() body: ...DTO): Promise<any> {
     return this.service.postMethod(body);
   }
 }

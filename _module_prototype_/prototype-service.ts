@@ -12,8 +12,13 @@ export class ...Service {
     private readonly repository: Repository<...Entity>,
   ) {}
 
-  async someMethod(params: AnyParams): Promise<...Entity[]> {
+  async getMethod(params: AnyParams): Promise<...Entity[]> {
     return await this.repository.find();
+  }
+
+  async postMethod(dto: ...DTO): Promise<...Entity> {
+    const body: ...Entity = this.repository.create(dto);
+    return await ...Entity.save(body);
   }
 
 }

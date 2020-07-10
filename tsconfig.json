@@ -12,5 +12,9 @@
     "incremental": true,
     "esModuleInterop": true
   },
-  "exclude": ["node_modules", "dist"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "_module_prototype_",
+  ]
 }
