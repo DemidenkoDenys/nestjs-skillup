@@ -6,7 +6,7 @@ import * as faker from 'faker';
 const getWord = () => {
   const word = faker.random.word();
   return {
-    word,
+    word: word.split(' ')[0],
     letters: word.length,
   };
 };

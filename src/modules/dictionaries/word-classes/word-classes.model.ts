@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
 
-@Entity('word-classes')
+@Entity('word_classes')
 export class WordClassesEntity extends BaseEntity {
 
     @PrimaryGeneratedColumn()

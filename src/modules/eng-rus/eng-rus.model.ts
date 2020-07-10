@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, BaseEntity, ManyToOne, JoinColumn } fro
 import { EnglishEntity } from '../english';
 import { RussianEntity } from '../russian';
 
-@Entity('eng-rus')
+@Entity('eng_rus')
 export class EngRusEntity extends BaseEntity {
 
     @PrimaryGeneratedColumn()
