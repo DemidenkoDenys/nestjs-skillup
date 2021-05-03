@@ -17,6 +17,12 @@ const MODELS_PATH = __dirname + '/**/*.model.ts';
 const TYPEORM_CMD = 'ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js';
 const MODELS_REGEXP = /(?<=\@Entity\(\')(.*)(?=\'\))/;
 
+const buildProject = async () => {
+  console.log('Project building...');
+  return new Promise((resolve, reject) => {
+    exec('npm run build', err => { console.log(err); if (err) { console.log(err); } resolve(); });
+  })
+}
 
 const readFileAsync = util.promisify(fs.readFile);
 const getModelsAsync = async () => {
@@ -107,6 +113,7 @@ function CLI() {
   inquirer.prompt(prompts).ui.process.subscribe(async ({ name, answer }) => {
     if (name === INIT_CLI) {
       if (answer === 'generate') {
+        await buildProject();
         const models = await getModelsAsync();
         if (models.some(m => m.includes('-'))) {
           const dashedModels = models.reduce((acc, m) => m.includes('-') ? `${acc}${m} ` : acc, '');
